@@ -4,11 +4,13 @@
   "description": "## Setup",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migration": "node src/migration/createTable.js && node src/migration/initialData.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^8.4.4"
+    "mongoose": "^8.4.4",
+    "pg": "^8.12.0"
   }
 }

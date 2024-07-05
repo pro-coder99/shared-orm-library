@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const dbConnection = async () => {
   try {
-    await mongoose.connect('mongodb://localhost:27017/clarivate-test', {
+    await mongoose.connect('mongodb://localhost:27017/clarivateTest', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
