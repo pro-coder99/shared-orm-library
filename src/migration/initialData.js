@@ -1,5 +1,4 @@
 const { Client } = require("pg");
-// const {UserSchema, SettingSchema} = require('./model');
 
 async function runMigration() {
   const client = new Client({
@@ -8,7 +7,6 @@ async function runMigration() {
     user: "postgres",
     password: "abc@1234",
     database: "clarivatetest",
-    // entities: [UserSchema, SettingSchema],
   });
 
   await client
