@@ -1,5 +1,26 @@
 const { Client } = require('pg');
 
+async function createDatabase() {
+  const client = new Client({
+    host: "localhost",
+    port: 5432,
+    user: "postgres",
+    password: "abc@1234",
+    database: "postgres",
+  });
+
+  await client.connect();
+
+  try {
+    await client.query(`CREATE DATABASE clarivatetest;`);
+    console.log('Database created successfully');
+  } catch (error) {
+    console.error('Error creating database', error);
+  } finally {
+    await client.end();
+  }
+}
+
 async function createTables() {
   const client = new Client({
     host: "localhost",
@@ -39,4 +60,7 @@ async function createTables() {
   }
 }
 
-createTables();
+(async () => {
+  await createDatabase();
+  await createTables();
+})();
