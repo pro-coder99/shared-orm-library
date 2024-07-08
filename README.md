@@ -10,5 +10,4 @@
 
 ## Usage
 
-1. Import the database connection from `src/db.js`.
-2. Import the models from `src/models.js`.
+1. Import the database connection from `src/dbConnectionPostgre.js`.
